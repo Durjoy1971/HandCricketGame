@@ -4,6 +4,7 @@
 let totalrun = 0;
 let user_chosen = 0;
 let cpu_chosen = 0;
+let highest_score = 0;
 
 function running(){
     console.log("User Chosen : ", user_chosen)
@@ -14,8 +15,21 @@ function running(){
 
     if(user_chosen == cpu_chosen)
     {
+        if(highest_score < totalrun)
+        {
+            highest_score = totalrun;
+        }
         alert("You are out !!\nYour Total Run : " +  totalrun + "\nBetter Luck Next Time");
         totalrun = 0;
+        document.getElementById("userCap").innerHTML= "--";
+
+        document.getElementById("cpuCap").innerHTML= "--";
+
+        document.getElementById("resultCap").innerHTML= "You Have Scored " + 0;
+
+        document.getElementById("totalRunCap").innerHTML= 0;
+
+        document.getElementById("highestCap").innerHTML= highest_score;
     }
     else
     {
